@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXTabPane?>
+<?import com.jfoenix.controls.JFXTextArea?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="AnchorPaneTabs" prefHeight="700.0" prefWidth="1000.0" stylesheets="@dark-theme.css" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.GuestHomepageController">
+   <children>
+      <ImageView fitHeight="700.0" fitWidth="1000.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../Desktop/G17_Assignment3/PROJECT/G17_FinalProject/src/files/bg20.png" />
+         </image>
+      </ImageView>
+      <JFXTabPane fx:id="mainTabPane" maxWidth="999.0" prefHeight="681.0" prefWidth="1000.0" tabMaxWidth="300.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <tabs>
+            <Tab fx:id="WelcomePage" closable="false" styleClass="tab-main" text="Welcome Page">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <JFXTextArea focusColor="#4d70da" layoutX="133.0" layoutY="64.0" prefHeight="511.0" prefWidth="734.0" styleClass="text-area-main" text="Welcome to Ort Braude library &#10;Here on this App you have access to our book database and the ability to do&#10;anonymous book searches and view those results.&#10;&#10;As a Reader Member you also have the ability to order and borrow the books&#10;that interest's you, and if you enjoyed them you could try and ask for extension&#10;on this borrowing.&#10;&#10;Our sophisticated system will remind you when ever your borrowing limit is&#10;arriving - so you won't forget to return it so others can enjoy it too =)&#10;&#10;Unfortunately our Reader Membership is only available for the students of Ort Braude.&#10;The Registration will be done on sight in our campus library which is loacated in Karmiel&#10;&#10;Opening Hours : &#10;Sunday to Thursday: 8:00-17:00&#10;Friday: 8:00-13:00&#10;Saturday: close&#10;Phone number : 04-9901967&#10;fax number : 04-9901880 " />
+                        <Label layoutX="413.0" layoutY="28.0" text="Welcome Page">
+                           <font>
+                              <Font name="System Bold" size="25.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+            <Tab fx:id="searchesTab" closable="false" styleClass="tab-main" text="Book Search">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <HBox fx:id="book_info" alignment="CENTER" layoutY="69.0" prefHeight="116.0" prefWidth="1000.0">
+                           <children>
+                              <JFXComboBox fx:id="cmbxBookSearchTypes" editable="true" labelFloat="true" onAction="#cmbxBookSearchTypes" prefHeight="37.0" prefWidth="150.0" promptText="Search Type" unFocusColor="WHITE">
+                                 <HBox.margin>
+                                    <Insets left="10.0" top="23.0" />
+                                 </HBox.margin>
+                              </JFXComboBox>
+                              <VBox alignment="CENTER" spacing="20.0">
+                                 <HBox.margin>
+                                    <Insets bottom="20.0" left="5.0" right="20.0" top="20.0" />
+                                 </HBox.margin>
+                                 <children>
+                                    <FontAwesomeIconView glyphName="BOOK" size="30" />
+                                    <JFXTextField fx:id="bookIDInput" labelFloat="true" onAction="#loadBookInfo" prefHeight="37.0" prefWidth="350.0" promptText="Enter Book Search Detail" unFocusColor="WHITE" />
+                                    <Label text="Click Enter To Search">
+                                       <VBox.margin>
+                                          <Insets top="-10.0" />
+                                       </VBox.margin>
+                                       <font>
+                                          <Font name="System Bold" size="12.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </HBox>
+                        <TableView fx:id="tblBookSearchResults" editable="true" layoutX="82.0" layoutY="217.0" prefHeight="313.0" prefWidth="836.0">
+                           <columns>
+                              <TableColumn fx:id="tblcolBookRowNum" prefWidth="48.0001220703125" text="Row #" />
+                              <TableColumn fx:id="tblcolBookName" prefWidth="202.39990234375" text="Book Name" />
+                              <TableColumn fx:id="tblcolBookAuthor" prefWidth="219.2000732421875" text="Book Author" />
+                              <TableColumn fx:id="tblcolBookSubject" prefWidth="192.80029296875" text="Subject" />
+                              <TableColumn fx:id="tblcolBookStatus" prefWidth="152.3997802734375" text="Status" />
+                           </columns>
+                        </TableView>
+                        <Label layoutX="370.0" layoutY="545.0" text="Double Click To View Book Information">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Label>
+                        <ImageView fitHeight="57.0" fitWidth="60.0" layoutX="25.0" layoutY="217.0" onMouseClicked="#RefreshBookImgbtn" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../files/refresh.png" />
+                           </image>
+                        </ImageView>
+                        <Label layoutX="423.0" layoutY="33.0" text="Book Search">
+                           <font>
+                              <Font name="System Bold" size="25.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+         </tabs>
+      </JFXTabPane>
+   </children>
+</AnchorPane>

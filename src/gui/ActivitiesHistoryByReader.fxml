@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTabPane?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="ActivitiesHistoryAnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1000.0" stylesheets="@dark-theme.css" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.ActivitiesHistoryByReaderController">
+   <children>
+      <JFXTabPane prefHeight="700.0" prefWidth="1000.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <tabs>
+            <Tab styleClass="tab-main" text="Activities History">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="500.0" prefWidth="650.0">
+                     <children>
+                        <TableView fx:id="tblActivitiesHistory" layoutX="84.0" layoutY="75.0" prefHeight="508.0" prefWidth="831.0">
+                           <columns>
+                              <TableColumn fx:id="tblcolRowNum" prefWidth="78.39999389648438" text="Row Num" />
+                              <TableColumn fx:id="tblcolActivity" prefWidth="427.99998474121094" text="Activity" />
+                              <TableColumn fx:id="tblcolDate" minWidth="0.0" prefWidth="162.00006103515625" text="Date" />
+                           </columns>
+                        </TableView>
+                        <Label fx:id="lblActivityHistory" layoutX="379.0" layoutY="14.0" text="Activities History" textFill="#c9c0c0">
+                           <font>
+                              <Font name="System Bold" size="30.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+            <Tab styleClass="tab-main" text="Old Borrowing History">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="500.0" prefWidth="650.0">
+                     <children>
+                        <TableView fx:id="tblOldBorrowingHistory" layoutX="37.0" layoutY="74.0" prefHeight="467.0" prefWidth="926.0">
+                           <columns>
+                              <TableColumn fx:id="tblcolOldRowNum" prefWidth="40.800048828125" text="Row#" />
+                              <TableColumn fx:id="tblcolOldBookName" prefWidth="165.60009765625" text="Book Name" />
+                              <TableColumn fx:id="tblcolOldBookAuthor" minWidth="0.0" prefWidth="163.599853515625" text="Book Author" />
+                              <TableColumn fx:id="tblcolOldBorrowingDate" prefWidth="121.2000732421875" text="Borrowing Date" />
+                              <TableColumn fx:id="tblcolOldReturnDate" prefWidth="114.400146484375" text="Return Date" />
+                              <TableColumn fx:id="tblcolOldActualReturnDate" prefWidth="123.5999755859375" text="Actual Return Date" />
+                              <TableColumn fx:id="tblcolOldDelayed" prefWidth="57.6002197265625" text="Delayed" />
+                              <TableColumn fx:id="tblcolOldLibrarianName" prefWidth="116.800048828125" text="Librarian Name" />
+                           </columns>
+                        </TableView>
+                        <Label fx:id="lblActivityHistory1" layoutX="341.0" layoutY="14.0" text="Old Borrowing History" textFill="#c9c0c0">
+                           <font>
+                              <Font name="System Bold" size="30.0" />
+                           </font>
+                        </Label>
+                        <JFXButton fx:id="btnViewOldBorrowedBookInfo" layoutX="407.0" layoutY="561.0" onAction="#btnViewOldBorrowedBookInfo" text="View Book Information" />
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+            <Tab styleClass="tab-main" text="Delayed Active Borrows">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="500.0" prefWidth="650.0">
+                     <children>
+                        <TableView fx:id="tblDelayedBorrows" layoutX="37.0" layoutY="74.0" prefHeight="468.0" prefWidth="926.0">
+                           <columns>
+                              <TableColumn fx:id="tblcolDelayedRowNum" prefWidth="40.800048828125" text="Row#" />
+                              <TableColumn fx:id="tblcolDelayedBookName" prefWidth="214.800048828125" text="Book Name" />
+                              <TableColumn fx:id="tblcolDelayedBookAuthor" minWidth="0.0" prefWidth="200.7998046875" text="Book Author" />
+                              <TableColumn fx:id="tblcolDelayedBorrowingDate" prefWidth="118.0" text="Borrowing Date" />
+                              <TableColumn fx:id="tblcolDelayedReturnDate" prefWidth="142.0" text="Return Date" />
+                              <TableColumn fx:id="tblcolDelayedLibrarianName" prefWidth="184.000244140625" text="Librarian Name" />
+                           </columns>
+                        </TableView>
+                        <Label fx:id="lblActivityHistory2" layoutX="380.0" layoutY="14.0" text="Delayed Borrows" textFill="#c9c0c0">
+                           <font>
+                              <Font name="System Bold" size="30.0" />
+                           </font>
+                        </Label>
+                        <JFXButton fx:id="btnViewDelayedBookInfo" layoutX="407.0" layoutY="561.0" onAction="#btnViewDelayedBookInfo" text="View Book Information" />
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+            <Tab styleClass="tab-main" text="Miss Used Old Book Borrows">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="500.0" prefWidth="650.0">
+                     <children>
+                        <TableView fx:id="tblMissUsedBorrows" layoutX="36.0" layoutY="74.0" prefHeight="467.0" prefWidth="926.0">
+                           <columns>
+                              <TableColumn fx:id="tblcolMissRowNum" prefWidth="40.800048828125" text="Row#" />
+                              <TableColumn fx:id="tblcolMissBookName" prefWidth="165.60009765625" text="Book Name" />
+                              <TableColumn fx:id="tblcolMissBookAuthor" minWidth="0.0" prefWidth="163.599853515625" text="Book Author" />
+                              <TableColumn fx:id="tblcolMissBorrowingDate" prefWidth="121.2000732421875" text="Borrowing Date" />
+                              <TableColumn fx:id="tblcolMissReturnDate" prefWidth="114.400146484375" text="Return Date" />
+                              <TableColumn fx:id="tblcolMissActualReturnDate" prefWidth="123.5999755859375" text="Actual Return Date" />
+                              <TableColumn fx:id="tblcolMissDelayed" prefWidth="57.6002197265625" text="Delayed" />
+                              <TableColumn fx:id="tblcolMissLibrarianName" prefWidth="116.800048828125" text="Librarian Name" />
+                           </columns>
+                        </TableView>
+                        <Label fx:id="lblActivityHistory3" layoutX="366.0" layoutY="14.0" text="Miss Used Borrows" textFill="#c9c0c0">
+                           <font>
+                              <Font name="System Bold" size="30.0" />
+                           </font>
+                        </Label>
+                        <JFXButton fx:id="btnViewMissUsedBookInfo" layoutX="407.0" layoutY="561.0" onAction="#btnViewMissUsedBookInfo" text="View Book Information" />
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+         </tabs>
+      </JFXTabPane>
+   </children>
+</AnchorPane>

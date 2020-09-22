@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXTabPane?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="AnchorPaneTabs" prefHeight="700.0" prefWidth="1000.0" stylesheets="@dark-theme.css" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.ReaderHomepageController">
+   <children>
+      <ImageView fitHeight="700.0" fitWidth="1000.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../files/bg7.png" />
+         </image>
+      </ImageView>
+      <StackPane fx:id="MainStack" prefHeight="700.0" prefWidth="1000.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <JFXTabPane fx:id="mainTabPane" maxWidth="999.0" prefHeight="681.0" prefWidth="1000.0" tabMaxWidth="300.0">
+               <tabs>
+                  <Tab fx:id="searchesTab" closable="false" styleClass="tab-main" text="Book Search">
+                     <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <HBox fx:id="book_info" alignment="CENTER" layoutY="72.0" prefHeight="113.0" prefWidth="1000.0">
+                                 <children>
+                                    <JFXComboBox fx:id="cmbxBookSearchTypes" editable="true" labelFloat="true" onAction="#cmbxBookSearchTypes" prefHeight="37.0" prefWidth="150.0" promptText="Search Type" unFocusColor="WHITE">
+                                       <HBox.margin>
+                                          <Insets left="10.0" top="23.0" />
+                                       </HBox.margin>
+                                    </JFXComboBox>
+                                    <VBox alignment="CENTER" spacing="20.0">
+                                       <HBox.margin>
+                                          <Insets bottom="20.0" left="5.0" right="20.0" top="20.0" />
+                                       </HBox.margin>
+                                       <children>
+                                          <FontAwesomeIconView glyphName="BOOK" size="30" />
+                                          <JFXTextField fx:id="bookIDInput" labelFloat="true" onAction="#loadBookInfo" prefHeight="37.0" prefWidth="350.0" promptText="Enter Book Search Detail" unFocusColor="WHITE" />
+                                          <Label text="Click Enter To Search">
+                                             <VBox.margin>
+                                                <Insets top="-10.0" />
+                                             </VBox.margin>
+                                             <font>
+                                                <Font name="System Bold" size="12.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </HBox>
+                              <TableView fx:id="tblBookSearchResults" editable="true" layoutX="82.0" layoutY="217.0" prefHeight="313.0" prefWidth="836.0">
+                                 <columns>
+                                    <TableColumn fx:id="tblcolBookRowNum" prefWidth="48.0001220703125" text="Row #" />
+                                    <TableColumn fx:id="tblcolBookName" prefWidth="202.39990234375" text="Book Name" />
+                                    <TableColumn fx:id="tblcolBookAuthor" prefWidth="219.2000732421875" text="Book Author" />
+                                    <TableColumn fx:id="tblcolBookSubject" prefWidth="192.80029296875" text="Subject" />
+                                    <TableColumn fx:id="tblcolBookStatus" prefWidth="152.3997802734375" text="Status" />
+                                 </columns>
+                              </TableView>
+                              <Label layoutX="370.0" layoutY="545.0" text="Double Click To View Book Information">
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                              </Label>
+                              <ImageView fx:id="RefreshBookImgbtn" fitHeight="57.0" fitWidth="60.0" layoutX="25.0" layoutY="214.0" onMouseClicked="#RefreshBookImgbtn" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../files/refresh.png" />
+                                 </image>
+                              </ImageView>
+                              <Label fx:id="ID" layoutX="25.0" layoutY="234.0" text="Label" visible="false" />
+                              <Label layoutX="427.0" layoutY="33.0" text="Book Search">
+                                 <font>
+                                    <Font name="System Bold" size="25.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                     </content>
+                  </Tab>
+                  <Tab fx:id="BookBorrowsandOrdersTab" closable="false" styleClass="tab-main" text="Book Borrows and Orders">
+                     <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <Label layoutX="72.0" layoutY="65.0" prefHeight="26.0" prefWidth="163.0" text="Active Borrowed Books:">
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                              </Label>
+                              <TableView fx:id="tblBorrowedBook" layoutX="72.0" layoutY="98.0" prefHeight="185.0" prefWidth="856.0">
+                                 <columns>
+                                    <TableColumn fx:id="tblcolBorrowRowNum" editable="false" prefWidth="46.4000244140625" text="Row #" />
+                                    <TableColumn fx:id="tblcolBorrowBookName" editable="false" prefWidth="185.2001953125" text="Book Name" />
+                                    <TableColumn fx:id="tblcolBorrowBookAuthor" editable="false" prefWidth="168.7999267578125" text="Book Author" />
+                                    <TableColumn fx:id="tblcolBorrowLenderName" editable="false" prefWidth="156.800048828125" text="Lender Name" />
+                                    <TableColumn fx:id="tblcolBorrowBorrowingDate" editable="false" prefWidth="138.7999267578125" text="Borrowing Date" />
+                                    <TableColumn fx:id="tblcolBorrowReturnDate" editable="false" prefWidth="136.4000244140625" text="Return Date" />
+                                 </columns>
+                              </TableView>
+                              <TableView fx:id="tblOrderBook" layoutX="72.0" layoutY="368.0" prefHeight="188.0" prefWidth="856.0">
+                                 <columns>
+                                    <TableColumn fx:id="tblcolOrderRowNum" prefWidth="55.199951171875" text="Row #" />
+                                    <TableColumn fx:id="tblcolOrderBookName" prefWidth="182.4000244140625" text="Book Name" />
+                                    <TableColumn fx:id="tblcolOrderBookAuthor" prefWidth="192.4000244140625" text="Book Author" />
+                                    <TableColumn fx:id="tblcolOrderOrderingDate" prefWidth="124.7999267578125" text="Ordering date" />
+                                    <TableColumn fx:id="tblcolOrderPlaceOnTheWaitingList" prefWidth="155.5999755859375" text="Place on the waiting list" />
+                                    <TableColumn fx:id="tblcolOrderClosestReturn" prefWidth="124.7999267578125" text="Closest Return" />
+                                 </columns>
+                              </TableView>
+                              <Label layoutX="72.0" layoutY="340.0" prefHeight="20.0" prefWidth="106.0" text="Ordered Books:">
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                              </Label>
+                              <JFXButton fx:id="CancelOrderBtn" layoutX="442.0" layoutY="566.0" onAction="#CancelOrderBtn" text="Cancel Order" />
+                              <JFXButton fx:id="AskForExtensionBtn" layoutX="427.0" layoutY="291.0" onAction="#AskForExtensionBtn" text="Ask for Extension" />
+                              <ImageView fx:id="refreshtblOrder" fitHeight="35.0" fitWidth="35.0" layoutX="37.0" layoutY="362.0" onMouseClicked="#refreshtblOrder" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../files/refresh.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fx:id="refreshtblBorrow" fitHeight="35.0" fitWidth="35.0" layoutX="39.0" layoutY="93.0" onMouseClicked="#refreshtblBorrow" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../files/refresh.png" />
+                                 </image>
+                              </ImageView>
+                              <Label layoutX="349.0" layoutY="27.0" text="Book Borrows and Orders">
+                                 <font>
+                                    <Font name="System Bold" size="25.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                     </content>
+                  </Tab>
+               </tabs>
+            </JFXTabPane>
+         </children>
+      </StackPane>
+   </children>
+</AnchorPane>

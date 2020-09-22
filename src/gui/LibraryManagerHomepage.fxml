@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXTabPane?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="AnchorPaneTabs" prefHeight="700.0" prefWidth="1000.0" stylesheets="@dark-theme.css" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.LibraryManagerHomepageController">
+   <children>
+      <ImageView fitHeight="700.0" fitWidth="1000.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../files/bg7.png" />
+         </image>
+      </ImageView>
+      <JFXTabPane fx:id="mainTabPane" maxWidth="999.0" prefHeight="681.0" prefWidth="1000.0" tabMaxWidth="300.0">
+         <tabs>
+            <Tab fx:id="searchesTab" closable="false" styleClass="tab-main" text="Book Search">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <JFXComboBox fx:id="cmbxBookSearchTypes" editable="true" labelFloat="true" layoutX="266.0" layoutY="124.0" onAction="#cmbxBookSearchTypes" prefHeight="37.0" prefWidth="144.0" promptText="Search Type" unFocusColor="WHITE" />
+                        <FontAwesomeIconView glyphName="BOOK" layoutX="555.0" layoutY="111.0" size="30" />
+                        <JFXTextField fx:id="bookIDInput" labelFloat="true" layoutX="427.0" layoutY="124.0" onAction="#loadBookInfo" prefHeight="37.0" prefWidth="283.0" promptText="Enter Book Search Detail" unFocusColor="WHITE" />
+                        <Label layoutX="505.0" layoutY="168.0" text="Click Enter To Search">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Label>
+                        <ImageView fitHeight="35.0" fitWidth="35.0" layoutX="47.0" layoutY="217.0" onMouseClicked="#RefreshBookImgbtn" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../files/refresh.png" />
+                           </image>
+                        </ImageView>
+                        <TableView fx:id="tblBookSearchResults" editable="true" layoutX="82.0" layoutY="217.0" prefHeight="313.0" prefWidth="836.0">
+                           <columns>
+                              <TableColumn fx:id="tblcolBookRowNum" prefWidth="48.0001220703125" text="Row #" />
+                              <TableColumn fx:id="tblcolBookName" prefWidth="202.39990234375" text="Book Name" />
+                              <TableColumn fx:id="tblcolBookAuthor" prefWidth="219.2000732421875" text="Book Author" />
+                              <TableColumn fx:id="tblcolBookSubject" prefWidth="192.80029296875" text="Subject" />
+                              <TableColumn fx:id="tblcolBookStatus" prefWidth="152.3997802734375" text="Status" />
+                           </columns>
+                        </TableView>
+                        <Label layoutX="351.0" layoutY="538.0" text="Double Click To View Book Information">
+                           <font>
+                              <Font name="System Bold" size="16.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="432.0" layoutY="33.0" text="Book Search">
+                           <font>
+                              <Font name="System Bold" size="25.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+            <Tab closable="false" styleClass="tab-main" text="Reader Search">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <JFXComboBox fx:id="cmbxReaderSearchTypes" editable="true" labelFloat="true" layoutX="266.0" layoutY="124.0" prefHeight="37.0" prefWidth="144.0" promptText="Search Type" unFocusColor="WHITE" />
+                        <FontAwesomeIconView glyphName="USER" layoutX="555.0" layoutY="111.0" size="30" />
+                        <JFXTextField fx:id="memberIDInput" labelFloat="true" layoutX="427.0" layoutY="124.0" onAction="#loadMemberInfo" prefHeight="37.0" prefWidth="283.0" promptText="Enter Reader Search Detail" unFocusColor="WHITE" />
+                        <Label layoutX="505.0" layoutY="168.0" text="Click Enter To Search">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Label>
+                        <ImageView fitHeight="35.0" fitWidth="35.0" layoutX="47.0" layoutY="218.0" onMouseClicked="#RefreshReaderImgbtn" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../files/refresh.png" />
+                           </image>
+                        </ImageView>
+                        <TableView fx:id="tblReaderSearchResults" layoutX="82.0" layoutY="218.0" prefHeight="312.0" prefWidth="836.0">
+                           <columns>
+                              <TableColumn fx:id="tblcolReaderRowNum" prefWidth="60.0" text="Row #" />
+                              <TableColumn fx:id="tblcolReaderCardNumber" prefWidth="227.19993591308594" text="Reader Card Number" />
+                              <TableColumn fx:id="tblcolReaderFullName" prefWidth="333.199951171875" text="Reader Full Name" />
+                              <TableColumn fx:id="tblcolReaderStatus" prefWidth="194.0" text="Status" />
+                           </columns>
+                        </TableView>
+                        <Label layoutX="351.0" layoutY="538.0" text="Double Click To View Reader Information">
+                           <font>
+                              <Font name="System Bold" size="16.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="423.0" layoutY="33.0" text="Reader Search">
+                           <font>
+                              <Font name="System Bold" size="25.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+            <Tab closable="false" styleClass="tab-main" text="Worker Search">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <JFXComboBox fx:id="cmbxWorkerSearchTypes" editable="true" labelFloat="true" layoutX="266.0" layoutY="124.0" prefHeight="37.0" prefWidth="144.0" promptText="Search Type" unFocusColor="WHITE" />
+                        <FontAwesomeIconView glyphName="USER" layoutX="555.0" layoutY="111.0" size="30" />
+                        <JFXTextField fx:id="memberIDInput1" labelFloat="true" layoutX="427.0" layoutY="124.0" onAction="#loadworkerInfo" prefHeight="37.0" prefWidth="283.0" promptText="Enter Worker Search Detail" unFocusColor="WHITE" />
+                        <Label layoutX="505.0" layoutY="168.0" text="Click Enter To Search">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Label>
+                        <ImageView fitHeight="35.0" fitWidth="35.0" layoutX="47.0" layoutY="221.0" onMouseClicked="#RefreshWorkerImgbtn" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../files/refresh.png" />
+                           </image>
+                        </ImageView>
+                        <TableView fx:id="tblWorkerSearchResults" layoutX="82.0" layoutY="221.0" prefHeight="309.0" prefWidth="836.0">
+                           <columns>
+                              <TableColumn fx:id="tblcolWorkerRowNum" prefWidth="60.0" text="Row #" />
+                              <TableColumn fx:id="tblcolWorkerNumber" prefWidth="227.19993591308594" text="Worker Number" />
+                              <TableColumn fx:id="tblcolWorkerFullName" prefWidth="333.199951171875" text="Worker Full Name" />
+                              <TableColumn fx:id="tblcolWorkerPermissions" prefWidth="194.0" text="Permissions" />
+                           </columns>
+                        </TableView>
+                        <Label layoutX="351.0" layoutY="538.0" text="Double Click To View Worker Information">
+                           <font>
+                              <Font name="System Bold" size="16.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="452.0" layoutY="33.0" text="Worker Search">
+                           <font>
+                              <Font name="System Bold" size="25.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+            <Tab fx:id="statisticReportsTab" closable="false" styleClass="tab-main" text="Statistic Reports">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <JFXComboBox fx:id="cmbxStatisticReportType" editable="true" labelFloat="true" layoutX="199.0" layoutY="123.0" prefHeight="40.0" prefWidth="220.0" promptText="Choose Report Type" />
+                        <JFXButton fx:id="btnGenerateNewStatisticReport" layoutX="449.0" layoutY="123.0" onAction="#btnGenerateNewStatisticReport" text="Generate New Statistic Report" />
+                        <Label layoutX="82.0" layoutY="195.0" text="Old Periodic Activities Reports Table:">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Label>
+                        <TableView fx:id="tblOldPeriodicActivitiesReports" layoutX="82.0" layoutY="221.0" prefHeight="309.0" prefWidth="836.0">
+                           <columns>
+                              <TableColumn fx:id="tblcolStatRowNum" prefWidth="69.19994354248047" text="Row Num" />
+                              <TableColumn fx:id="tblcolStatReportID" prefWidth="229.199951171875" text="Report ID" />
+                              <TableColumn fx:id="tblcolStatProducerName" prefWidth="320.7998352050781" text="Producer Name" />
+                              <TableColumn fx:id="tblcolStatProductionDate" minWidth="1.220703125E-4" prefWidth="195.60009765625" text="Production Date" />
+                           </columns>
+                        </TableView>
+                        <JFXButton fx:id="btnViewOldStatisticReport" layoutX="445.0" layoutY="540.0" onAction="#btnViewOldStatisticReport" text="View Report" />
+                        <ImageView fx:id="Refresh" fitHeight="35.0" fitWidth="35.0" layoutX="47.0" layoutY="221.0" onMouseClicked="#Refresh" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../files/refresh.png" />
+                           </image>
+                        </ImageView>
+                        <Label layoutX="442.0" layoutY="33.0" text="Statistic Reports">
+                           <font>
+                              <Font name="System Bold" size="25.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+            <Tab fx:id="disciplinaryInquiryReportsTab" closable="false" styleClass="tab-main" text="Disciplinary Inquiry Reports">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TableView fx:id="tblDisciplinaryInquiryReport" layoutX="53.0" layoutY="157.0" prefHeight="349.0" prefWidth="891.0">
+                           <columns>
+                              <TableColumn fx:id="tblcolDisRowNum" prefWidth="69.599609375" text="Row Num" />
+                              <TableColumn fx:id="tblcolDisReportID" prefWidth="148.00025939941406" text="Report ID" />
+                              <TableColumn fx:id="tblcolDisReaderName" prefWidth="157.599853515625" text="Reader Name" />
+                              <TableColumn fx:id="tblcolDisReaderCardNumber" minWidth="1.220703125E-4" prefWidth="140.7998046875" text="Reader Card Number" />
+                              <TableColumn fx:id="tblcolDisProducerName" prefWidth="152.800048828125" text="Producer Name" />
+                              <TableColumn fx:id="tblcolDisProductionDate" prefWidth="110.400146484375" text="Production Date" />
+                              <TableColumn fx:id="tblcolDisVerdict" prefWidth="89.599853515625" text="Verdict" />
+                           </columns>
+                        </TableView>
+                        <JFXButton fx:id="btnView" layoutX="360.0" layoutY="525.0" onAction="#btnView" text="View Old Disciplinary Inquiry Report" />
+                        <JFXButton fx:id="btnCreateNewReport" layoutX="350.0" layoutY="105.0" onAction="#btnCreateNewReport" text="Create New Disciplinary Inquiry Report" />
+                        <ImageView fx:id="Refresh2" fitHeight="35.0" fitWidth="35.0" layoutX="18.0" layoutY="157.0" onMouseClicked="#Refresh2" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../files/refresh.png" />
+                           </image>
+                        </ImageView>
+                        <Label layoutX="335.0" layoutY="33.0" text="Disciplinary Inquiry Reports">
+                           <font>
+                              <Font name="System Bold" size="25.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+         </tabs>
+      </JFXTabPane>
+   </children>
+</AnchorPane>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.StackPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="380.0" prefWidth="445.0" stylesheets="@dark-theme.css" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.LoginController">
+   <children>
+      <ImageView fitHeight="452.0" fitWidth="445.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../files/bg11.png" />
+         </image>
+      </ImageView>
+      <StackPane fx:id="MainStack" prefHeight="367.0" prefWidth="419.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <AnchorPane id="AnchorPane" fx:id="MainAnchor" prefHeight="348.0" prefWidth="463.0" stylesheets="@dark-theme.css">
+               <children>
+                  <JFXTextField fx:id="userFilled" labelFloat="true" layoutX="107.0" layoutY="137.0" prefHeight="33.0" prefWidth="259.0" promptText="Username" />
+                  <JFXPasswordField fx:id="passwordFilled" labelFloat="true" layoutX="109.0" layoutY="209.0" onAction="#handleLoginButtonAction" prefHeight="34.0" prefWidth="259.0" promptText="Password" />
+                  <JFXButton fx:id="handleLoginButtonAction" layoutX="118.0" layoutY="293.0" onAction="#handleLoginButtonAction" prefHeight="40.0" prefWidth="90.0" text="Login" />
+                  <JFXButton fx:id="handleCancelButtonAction" layoutX="251.0" layoutY="293.0" onAction="#handleCancelButtonAction" prefHeight="40.0" prefWidth="90.0" text="Cancel" />
+                  <FontAwesomeIconView glyphName="USER_CIRCLE" layoutX="194.0" layoutY="95.0" size="55" />
+                  <FontAwesomeIconView glyphName="USER" layoutX="76.0" layoutY="164.0" size="25" />
+                  <FontAwesomeIconView glyphName="KEY" layoutX="76.0" layoutY="239.0" size="25" />
+               </children>
+            </AnchorPane>
+         </children>
+      </StackPane>
+   </children>
+</AnchorPane>

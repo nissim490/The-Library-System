@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXTabPane?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="AnchorPaneTabs" prefHeight="700.0" prefWidth="1000.0" stylesheets="@dark-theme.css" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.LibrarianHomepageController">
+   <children>
+      <ImageView fitHeight="700.0" fitWidth="1000.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../files/bg7.png" />
+         </image>
+      </ImageView>
+      <JFXTabPane fx:id="mainTabPane" maxWidth="999.0" prefHeight="681.0" prefWidth="1000.0" tabMaxWidth="300.0">
+         <tabs>
+            <Tab fx:id="searchesTab" closable="false" styleClass="tab-main" text="Book Search">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <JFXComboBox fx:id="cmbxBookSearchTypes" editable="true" labelFloat="true" layoutX="266.0" layoutY="124.0" onAction="#cmbxBookSearchTypes" prefHeight="37.0" prefWidth="144.0" promptText="Search Type" unFocusColor="WHITE" />
+                        <FontAwesomeIconView glyphName="BOOK" layoutX="555.0" layoutY="111.0" size="30" />
+                        <JFXTextField fx:id="bookIDInput" labelFloat="true" layoutX="427.0" layoutY="124.0" onAction="#loadBookInfo" prefHeight="37.0" prefWidth="283.0" promptText="Enter Book Search Detail" unFocusColor="WHITE" />
+                        <Label layoutX="505.0" layoutY="168.0" text="Click Enter To Search">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Label>
+                        <ImageView fitHeight="35.0" fitWidth="35.0" layoutX="47.0" layoutY="217.0" onMouseClicked="#RefreshBookImgbtn" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../files/refresh.png" />
+                           </image>
+                        </ImageView>
+                        <TableView fx:id="tblBookSearchResults" editable="true" layoutX="82.0" layoutY="217.0" prefHeight="313.0" prefWidth="836.0">
+                           <columns>
+                              <TableColumn fx:id="tblcolBookRowNum" prefWidth="48.0001220703125" text="Row #" />
+                              <TableColumn fx:id="tblcolBookName" prefWidth="202.39990234375" text="Book Name" />
+                              <TableColumn fx:id="tblcolBookAuthor" prefWidth="219.2000732421875" text="Book Author" />
+                              <TableColumn fx:id="tblcolBookSubject" prefWidth="192.80029296875" text="Subject" />
+                              <TableColumn fx:id="tblcolBookStatus" prefWidth="152.3997802734375" text="Status" />
+                           </columns>
+                        </TableView>
+                        <Label layoutX="351.0" layoutY="538.0" text="Double Click To View Book Information">
+                           <font>
+                              <Font name="System Bold" size="16.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="432.0" layoutY="33.0" text="Book Search">
+                           <font>
+                              <Font name="System Bold" size="25.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+            <Tab closable="false" styleClass="tab-main" text="Reader Search">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <JFXComboBox fx:id="cmbxReaderSearchTypes" editable="true" labelFloat="true" layoutX="266.0" layoutY="124.0" prefHeight="37.0" prefWidth="144.0" promptText="Search Type" unFocusColor="WHITE" />
+                        <FontAwesomeIconView glyphName="USER" layoutX="555.0" layoutY="111.0" size="30" />
+                        <JFXTextField fx:id="memberIDInput" labelFloat="true" layoutX="427.0" layoutY="124.0" onAction="#loadMemberInfo" prefHeight="37.0" prefWidth="283.0" promptText="Enter Reader Search Detail" unFocusColor="WHITE" />
+                        <Label layoutX="505.0" layoutY="168.0" text="Click Enter To Search">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Label>
+                        <ImageView fitHeight="35.0" fitWidth="35.0" layoutX="47.0" layoutY="217.0" onMouseClicked="#RefreshReaderImgbtn" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../files/refresh.png" />
+                           </image>
+                        </ImageView>
+                        <TableView fx:id="tblReaderSearchResults" layoutX="82.0" layoutY="217.0" prefHeight="313.0" prefWidth="836.0">
+                           <columns>
+                              <TableColumn fx:id="tblcolReaderRowNum" prefWidth="60.0" text="Row #" />
+                              <TableColumn fx:id="tblcolReaderCardNumber" prefWidth="227.19993591308594" text="Reader Card Number" />
+                              <TableColumn fx:id="tblcolReaderFullName" prefWidth="333.199951171875" text="Reader Full Name" />
+                              <TableColumn fx:id="tblcolReaderStatus" prefWidth="194.0" text="Status" />
+                           </columns>
+                        </TableView>
+                        <Label layoutX="351.0" layoutY="538.0" text="Double Click To View Reader Information">
+                           <font>
+                              <Font name="System Bold" size="16.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="423.0" layoutY="33.0" text="Reader Search">
+                           <font>
+                              <Font name="System Bold" size="25.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+         </tabs>
+      </JFXTabPane>
+   </children>
+</AnchorPane>

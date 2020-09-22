@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXTabPane?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="PersonalInfomationAnchorPane" prefHeight="700.0" prefWidth="1000.0" stylesheets="@dark-theme.css" xmlns="http://javafx.com/javafx/8.0.202" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.PersonalInformationByReaderController">
+   <children>
+      <StackPane fx:id="MainStack" prefHeight="700.0" prefWidth="1000.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <JFXTabPane maxWidth="999.0" prefHeight="681.0" prefWidth="1000.0" tabMaxWidth="300.0">
+               <tabs>
+                  <Tab closable="false" styleClass="tab-main" text="Personal Information">
+                    <content>
+                      <AnchorPane prefHeight="700.0" prefWidth="1000.0">
+                           <children>
+                              <Pane layoutY="30.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="670.0" prefWidth="1000.0" stylesheets="@dark-theme.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="30.0">
+                                 <children>
+                                    <Label layoutX="197.0" layoutY="89.0" text="First Name:" textFill="#c9c0c0">
+                                       <font>
+                                          <Font size="16.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="199.0" layoutY="141.0" text="Last Name:" textFill="#c9c0c0">
+                                       <font>
+                                          <Font size="16.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="196.0" layoutY="193.0" text="ID Number:" textFill="#c9c0c0">
+                                       <font>
+                                          <Font size="16.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="179.0" layoutY="453.0" text="Card Number:" textFill="#c9c0c0">
+                                       <font>
+                                          <Font size="16.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="204.0" layoutY="349.0" text="Username:" textFill="#c9c0c0">
+                                       <font>
+                                          <Font size="16.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="209.0" layoutY="401.0" text="Password:" textFill="#c9c0c0">
+                                       <font>
+                                          <Font size="16.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="167.0" layoutY="245.0" text="Phone Number:" textFill="#c9c0c0">
+                                       <font>
+                                          <Font size="16.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="230.0" layoutY="297.0" text="E-Mail:" textFill="#c9c0c0">
+                                       <font>
+                                          <Font size="16.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="194.0" layoutY="505.0" text="Card Status:" textFill="#c9c0c0">
+                                       <font>
+                                          <Font size="16.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="351.0" layoutY="14.0" text="Personal Information" textFill="#c9c0c0">
+                                       <font>
+                                          <Font name="System Bold" size="30.0" />
+                                       </font>
+                                    </Label>
+                                    <JFXTextField fx:id="lblFirstName" layoutX="299.0" layoutY="75.0" prefWidth="250.0" unFocusColor="WHITE" />
+                                    <JFXTextField fx:id="lblLastName" layoutX="299.0" layoutY="126.0" prefWidth="250.0" unFocusColor="WHITE" />
+                                    <JFXTextField fx:id="lblIDNumber" disable="true" editable="false" layoutX="299.0" layoutY="177.0" prefWidth="250.0" unFocusColor="#959494" />
+                                    <JFXComboBox fx:id="CBXPhone" editable="true" layoutX="299.0" layoutY="233.0" prefHeight="33.0" prefWidth="58.0" unFocusColor="WHITE" />
+                                    <JFXTextField fx:id="lblPhoneNumber" layoutX="356.0" layoutY="231.0" prefHeight="37.0" prefWidth="191.0" unFocusColor="WHITE" />
+                                    <JFXTextField fx:id="lblEmail" layoutX="299.0" layoutY="285.0" prefWidth="250.0" unFocusColor="WHITE" />
+                                    <JFXTextField fx:id="lblUsername" disable="true" editable="false" layoutX="299.0" layoutY="338.0" prefWidth="250.0" unFocusColor="#959494" />
+                                    <JFXTextField fx:id="lblPassword" layoutX="299.0" layoutY="389.0" prefWidth="250.0" unFocusColor="WHITE" />
+                                    <JFXTextField fx:id="lblCardNumber" disable="true" editable="false" layoutX="299.0" layoutY="440.0" prefHeight="37.0" prefWidth="250.0" unFocusColor="#959494" />
+                                    <JFXTextField fx:id="lblCardStatus" disable="true" editable="false" layoutX="299.0" layoutY="491.0" prefHeight="37.0" prefWidth="250.0" unFocusColor="#959494" />
+                                    <JFXButton fx:id="SaveChanges" layoutX="348.0" layoutY="560.0" onAction="#SaveChanges" text="Save Changes" />
+                                    <ImageView fitHeight="276.0" fitWidth="272.0" layoutX="627.0" layoutY="71.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../files/community-student-icon.png" />
+                                       </image>
+                                    </ImageView>
+                                    <JFXButton fx:id="edit" layoutX="500.0" layoutY="560.0" onAction="#editac" text="edit" />
+                                 </children>
+                              </Pane>
+                           </children>
+                        </AnchorPane>
+                    </content>
+                  </Tab>
+               </tabs>
+            </JFXTabPane>
+         </children>
+      </StackPane>
+   </children>
+</AnchorPane>

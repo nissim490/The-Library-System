@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXTabPane?>
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="575.0" prefWidth="650.0" stylesheets="@dark-theme.css" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.ViewDelayedHistogramController">
+   <children>
+      <JFXTabPane prefHeight="575.0" prefWidth="650.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <tabs>
+            <Tab styleClass="tab-main" text="Amount Histogram">
+               <content>
+                  <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="650.0" stylesheets="@dark-theme.css">
+                     <children>
+                        <Label id="lblFindingSought" layoutX="209.0" layoutY="14.0" prefHeight="40.0" prefWidth="234.0" text="Amount Histogram" textFill="#c9c0c0">
+                           <font>
+                              <Font name="System Bold" size="24.0" />
+                           </font>
+                        </Label>
+                        <BarChart fx:id="AmountBarChart" layoutX="76.0" layoutY="63.0">
+                          <xAxis>
+                            <CategoryAxis fx:id="AmountX" side="BOTTOM" />
+                          </xAxis>
+                          <yAxis>
+                            <NumberAxis fx:id="AmountY" side="LEFT" />
+                          </yAxis>
+                        </BarChart>
+                     </children>
+                  </Pane>
+               </content>
+            </Tab>
+            <Tab styleClass="tab-main" text="Duration Histogram">
+               <content>
+                  <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="650.0" stylesheets="@dark-theme.css">
+                     <children>
+                        <Label id="lblFindingSought" layoutX="209.0" layoutY="14.0" prefHeight="40.0" prefWidth="231.0" text="Duration Histogram" textFill="#c9c0c0">
+                           <font>
+                              <Font name="System Bold" size="24.0" />
+                           </font>
+                        </Label>
+                        <BarChart fx:id="DurationBarChart" layoutX="76.0" layoutY="63.0">
+                           <xAxis>
+                              <CategoryAxis fx:id="DurationX" side="BOTTOM" />
+                           </xAxis>
+                           <yAxis>
+                              <NumberAxis fx:id="DurationY" side="LEFT" />
+                           </yAxis>
+                        </BarChart>
+                     </children>
+                  </Pane>
+               </content>
+            </Tab>
+         </tabs>
+      </JFXTabPane>
+   </children>
+</AnchorPane>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTabPane?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1000.0" stylesheets="@dark-theme.css" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.ListOfMessagesByAllController">
+   <children>
+      <JFXTabPane prefHeight="700.0" prefWidth="1000.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <tabs>
+            <Tab closable="false" styleClass="tab-main" text="Messages">
+               <content>
+                  <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="640.0" prefWidth="1000.0" stylesheets="@dark-theme.css">
+                     <children>
+                        <TableView fx:id="tblMessage" layoutX="92.0" layoutY="124.0" prefHeight="431.0" prefWidth="817.0">
+                           <columns>
+                                 <TableColumn fx:id="tblcSelect" minWidth="0.0" prefWidth="35.0" />
+                              <TableColumn fx:id="tblcStatus" minWidth="0.0" prefWidth="113.199951171875" text="Status" />
+                              <TableColumn fx:id="tblcSentFrom" prefWidth="144.79991149902344" text="Sent From" />
+                              <TableColumn fx:id="tblcContent" prefWidth="359.99993896484375" text="Content" />
+                              <TableColumn fx:id="tblcDate" minWidth="0.0" prefWidth="146.800048828125" text="Date" />
+                           </columns>
+                        </TableView>
+                        <Label fx:id="Messages" layoutX="432.0" layoutY="14.0" text="Messages" textFill="#c9c0c0">
+                           <font>
+                              <Font name="System Bold" size="30.0" />
+                           </font>
+                        </Label>
+                        <JFXButton fx:id="btnViewMessage" layoutX="438.0" layoutY="565.0" onAction="#btnViewMessage" text="View Message" />
+                        <JFXButton fx:id="btnDelete" layoutX="92.0" layoutY="77.0" onAction="#btnDelete" text="Delete" />
+                        <JFXButton fx:id="btnMarkAsRead" layoutX="165.0" layoutY="77.0" onAction="#btnMarkAsRead" text="Mark As Read" />
+                        <JFXButton fx:id="btnMarkAsUnread" layoutX="290.0" layoutY="77.0" onAction="#btnMarkAsUnread" text="Mark As Unread" />
+                        <CheckBox fx:id="SelectAll" layoutX="101.0" layoutY="130.0" mnemonicParsing="false" onAction="#selectAll" />
+                     </children>
+                  </Pane>
+               </content>
+            </Tab>
+         </tabs>
+      </JFXTabPane>
+   </children>
+</AnchorPane>

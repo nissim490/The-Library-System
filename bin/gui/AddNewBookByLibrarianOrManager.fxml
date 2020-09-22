@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import com.jfoenix.controls.JFXTabPane?>
+<?import com.jfoenix.controls.JFXTextArea?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+<?import org.controlsfx.control.CheckComboBox?>
+
+<AnchorPane fx:id="AddNewBookPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1000.0" stylesheets="@dark-theme.css" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.AddNewBookByLibrarianOrManagerController">
+   <children>
+      <StackPane fx:id="MainStack" prefHeight="700.0" prefWidth="1000.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <JFXTabPane prefHeight="700.0" prefWidth="1000.0">
+               <tabs>
+                  <Tab styleClass="tab-main" text="Add New Book">
+                     <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="700.0" prefWidth="1000.0" stylesheets="@dark-theme.css">
+                           <children>
+                              <ImageView fitHeight="700.0" fitWidth="1000.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../files/bg10.png" />
+                                 </image>
+                              </ImageView>
+                              <Label layoutX="107.0" layoutY="82.0" text="Book Catalog Num:">
+                                 <font>
+                                    <Font name="System Bold" size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="416.0" layoutY="6.0" text="Add New Book">
+                                 <font>
+                                    <Font name="System Bold" size="30.0" />
+                                 </font>
+                              </Label>
+                              <Label id="lblBookName" layoutX="107.0" layoutY="134.0" text="Book Name:">
+                                 <font>
+                                    <Font name="System Bold" size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label id="lblAuthorName" layoutX="107.0" layoutY="187.0" text="Author Name:">
+                                 <font>
+                                    <Font name="System Bold" size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label id="lblType" layoutX="107.0" layoutY="276.0" text="Subject:">
+                                 <font>
+                                    <Font name="System Bold" size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label id="lblDescription" layoutX="107.0" layoutY="467.0" text="Table Of Content:">
+                                 <font>
+                                    <Font name="System Bold" size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label id="lblAvailibleCopies" layoutX="107.0" layoutY="368.0" text="Availible Copies:">
+                                 <font>
+                                    <Font name="System Bold" size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label id="lblShelfNum" layoutX="107.0" layoutY="420.0" text="Shelf Num:">
+                                 <font>
+                                    <Font name="System Bold" size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label id="lblAuthorName" layoutX="107.0" layoutY="318.0" text="Popularity:">
+                                 <font>
+                                    <Font name="System Bold" size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label id="lblShelfNum" layoutX="107.0" layoutY="237.0" text="Edition Number:">
+                                 <font>
+                                    <Font name="System Bold" size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label id="lblShelfNum" layoutX="438.0" layoutY="510.0" text="Published Date:">
+                                 <opaqueInsets>
+                                    <Insets />
+                                 </opaqueInsets>
+                                 <font>
+                                    <Font name="System Bold" size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label id="lblShelfNum" layoutX="107.0" layoutY="514.0" text="Purchase Date:">
+                                 <font>
+                                    <Font name="System Bold" size="16.0" />
+                                 </font>
+                              </Label>
+                              <JFXTextField fx:id="txtBookCatalogNum" labelFloat="true" layoutX="265.0" layoutY="73.0" prefHeight="37.0" prefWidth="300.0" promptText="Example: &quot;Cata123456&quot;" unFocusColor="WHITE" />
+                              <JFXTextField fx:id="txtBookName" labelFloat="true" layoutX="265.0" layoutY="125.0" prefHeight="37.0" prefWidth="300.0" promptText="Example: &quot;The Jungle Book&quot;" unFocusColor="WHITE" />
+                              <JFXTextField fx:id="txtAuthorName" labelFloat="true" layoutX="265.0" layoutY="178.0" prefHeight="37.0" prefWidth="300.0" promptText="Example: &quot;J.K Rolling , Tommy Junior&quot;" unFocusColor="WHITE" />
+                              <JFXTextField fx:id="txtEditionNumber" labelFloat="true" layoutX="265.0" layoutY="231.0" prefWidth="300.0" promptText="Example: &quot;First/Revised/Cheap/...&quot;" unFocusColor="WHITE" />
+                              <CheckComboBox fx:id="cbxSubject" layoutX="265.0" layoutY="277.0" prefHeight="25.0" prefWidth="301.0" />
+                              <JFXComboBox fx:id="cmbPopularity" editable="true" layoutX="265.0" layoutY="309.0" prefHeight="25.0" prefWidth="150.0" unFocusColor="WHITE" />
+                              <JFXTextField fx:id="txtAvailibleCopies" labelFloat="true" layoutX="265.0" layoutY="361.0" prefHeight="37.0" prefWidth="150.0" promptText="Example: &quot;5&quot;" unFocusColor="WHITE" />
+                              <JFXTextField fx:id="txtShelfNum" labelFloat="true" layoutX="265.0" layoutY="413.0" prefHeight="37.0" prefWidth="150.0" promptText="Example: &quot;H15&quot;" unFocusColor="WHITE" />
+                              <JFXButton fx:id="BrowseForPDFBtn" layoutX="265.0" layoutY="460.0" onAction="#BrowseForPDFBtn" text="Browse For PDF" />
+                              <JFXDatePicker fx:id="DPKPurchaseDate" layoutX="265.0" layoutY="504.0" prefHeight="37.0" prefWidth="155.0" />
+                              <JFXDatePicker fx:id="DPKPublishedDate" layoutX="569.0" layoutY="504.0" prefHeight="37.0" prefWidth="155.0" />
+                              <JFXButton fx:id="AddBookBtn" layoutX="431.0" layoutY="561.0" onAction="#AddBookBtn" text="Add Book" textFill="#343943" />
+                              <JFXTextArea fx:id="txtDescription" layoutX="454.0" layoutY="345.0" prefHeight="152.0" prefWidth="283.0" promptText="Enter a little summary about this book" unFocusColor="WHITE" />
+                              <Label id="lblAuthorName" layoutX="454.0" layoutY="318.0" text="Description:">
+                                 <font>
+                                    <Font name="System Bold" size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="TableOCURL" layoutY="622.0" text="Label" visible="false" />
+                           </children>
+                        </AnchorPane>
+                     </content>
+                  </Tab>
+               </tabs>
+            </JFXTabPane>
+         </children>
+      </StackPane>
+   </children>
+</AnchorPane>

@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox fx:id="box" prefHeight="602.0" prefWidth="180.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.GuestToolbarController">
+   <children>
+      <JFXButton fx:id="HomepageBTN" accessibleText="Homepage" contentDisplay="TOP" mnemonicParsing="false" onAction="#HomepageBTN" prefHeight="70.0" prefWidth="180.0" styleClass="toolbar-button" text="Homepage" textAlignment="CENTER">
+         <graphic>
+            <FontAwesomeIconView glyphName="HOME" size="25" textAlignment="CENTER" />
+         </graphic>
+         <font>
+            <Font size="14.0" />
+         </font>
+      </JFXButton>
+      <JFXButton fx:id="PersonalInformationBTN" accessibleText="PersonalInformation" contentDisplay="TOP" onAction="#PersonalInformationBTN" prefHeight="70.0" prefWidth="180.0" styleClass="toolbar-button" text="Personal Information" textAlignment="CENTER">
+         <graphic>
+            <FontAwesomeIconView glyphName="USER" size="25" />
+         </graphic>
+         <font>
+            <Font size="14.0" />
+         </font>
+      </JFXButton>
+      <JFXButton fx:id="MessagesBTN" accessibleText="Messages" contentDisplay="TOP" onAction="#MessagesBTN" prefHeight="70.0" prefWidth="180.0" styleClass="toolbar-button" text="Messages" textAlignment="CENTER">
+         <graphic>
+            <FontAwesomeIconView glyphName="ENVELOPE" size="20" />
+         </graphic>
+         <font>
+            <Font size="14.0" />
+         </font>
+      </JFXButton>
+      <JFXButton fx:id="ReaderRegistrationBTN" accessibleText="ReaderRegistration" contentDisplay="TOP" mnemonicParsing="false" onAction="#ReaderRegistrationBTN" prefHeight="70.0" prefWidth="180.0" styleClass="toolbar-button" text="Reader Registration" textAlignment="CENTER">
+         <graphic>
+            <FontAwesomeIconView glyphName="USER_PLUS" size="25" />
+         </graphic>
+         <font>
+            <Font size="14.0" />
+         </font>
+      </JFXButton>
+      <JFXButton fx:id="LockingConfirmationBTN" accessibleText="LockingConfirmation" contentDisplay="TOP" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#LockingConfirmationBTN" prefHeight="70.0" prefWidth="180.0" styleClass="toolbar-button" text="Locking Confirmation" textAlignment="CENTER">
+         <graphic>
+            <FontAwesomeIconView glyphName="LOCK" size="25" />
+         </graphic>
+         <font>
+            <Font size="14.0" />
+         </font>
+      </JFXButton>
+      <JFXButton fx:id="ReceiveReturnBookBTN" accessibleText="ReceiveReturnBook" contentDisplay="TOP" layoutX="10.0" layoutY="81.0" mnemonicParsing="false" onAction="#ReceiveReturnBookBTN" prefHeight="70.0" prefWidth="180.0" styleClass="toolbar-button" text="Receive Return Book" textAlignment="CENTER">
+         <graphic>
+            <FontAwesomeIconView glyphName="EXCHANGE" size="25" />
+         </graphic>
+         <font>
+            <Font size="14.0" />
+         </font>
+      </JFXButton>
+      <JFXButton fx:id="BorrowedBookListBTN" accessibleText="BorrowedBookList" contentDisplay="TOP" onAction="#BorrowedBookListBTN" prefHeight="70.0" prefWidth="180.0" styleClass="toolbar-button" text="Borrowed Book List">
+         <graphic>
+            <FontAwesomeIconView glyphName="TABLE" size="25" />
+         </graphic>
+         <font>
+            <Font size="14.0" />
+         </font>
+      </JFXButton>
+      <JFXButton fx:id="AddNewBookBTN" accessibleText="AddNewBook" contentDisplay="TOP" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#AddNewBookBTN" prefHeight="70.0" prefWidth="180.0" styleClass="toolbar-button" text="Add New Book" textAlignment="CENTER">
+         <graphic>
+            <FontAwesomeIconView glyphName="BOOK" size="25" />
+         </graphic>
+         <font>
+            <Font size="14.0" />
+         </font>
+      </JFXButton>
+      <JFXButton fx:id="LogOutBTN" accessibleText="LogOut" contentDisplay="TOP" layoutX="10.0" layoutY="223.0" mnemonicParsing="false" onAction="#LogOutBTN" prefHeight="70.0" prefWidth="180.0" styleClass="toolbar-button" text="Log Out" textAlignment="CENTER">
+         <graphic>
+            <FontAwesomeIconView glyphName="COG" size="25" />
+         </graphic>
+         <font>
+            <Font size="14.0" />
+         </font>
+      </JFXButton>
+   </children>
+</VBox>

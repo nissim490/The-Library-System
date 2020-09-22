@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXTextArea?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="575.0" prefWidth="650.0" stylesheets="@dark-theme.css" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.ViewNewOldDisciplinaryInquiryReportByManagerController">
+   <children>
+      <Label id="lblAuthorName" layoutX="66.0" layoutY="134.0" text="Reader Name:" textFill="#c9c0c0">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font></Label>
+      <Label id="lblType" layoutX="66.0" layoutY="177.0" text="Reader Card Number:" textFill="#c9c0c0">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font></Label>
+      <Label id="lblAvailibleCopies" layoutX="66.0" layoutY="220.0" text="Manager Name:" textFill="#c9c0c0">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font></Label>
+      <Label id="lblShelfNum" layoutX="66.0" layoutY="263.0" text="Inquiry Date:" textFill="#c9c0c0">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font></Label>
+      <Label id="lblCloseReturnDate" layoutX="66.0" layoutY="306.0" text="Inquiry Verdict:" textFill="#c9c0c0">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label id="lblDescription" layoutX="66.0" layoutY="345.0" text="Description:" textFill="#c9c0c0">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font></Label>
+      <Label layoutX="147.0" layoutY="20.0" text="Old Disciplinary Inquiry Report" textFill="#c9c0c0">
+         <font>
+            <Font name="System Bold" size="25.0" />
+         </font>
+      </Label>
+      <Label id="lblAuthorName" layoutX="66.0" layoutY="91.0" text="ReportID:" textFill="#c9c0c0">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <JFXTextField fx:id="txtReportID" disable="true" layoutX="221.0" layoutY="83.0" prefHeight="37.0" prefWidth="197.0" unFocusColor="#959494" />
+      <JFXTextField fx:id="txtReaderName" disable="true" layoutX="221.0" layoutY="123.0" prefHeight="37.0" prefWidth="197.0" unFocusColor="#959494" />
+      <JFXTextField fx:id="txtReaderCardNumber" disable="true" layoutX="221.0" layoutY="166.0" prefHeight="37.0" prefWidth="197.0" unFocusColor="#959494" />
+      <JFXTextField fx:id="txtMangerName" disable="true" layoutX="221.0" layoutY="209.0" prefHeight="37.0" prefWidth="197.0" unFocusColor="#959494" />
+      <JFXTextField fx:id="txtDate" disable="true" layoutX="221.0" layoutY="252.0" prefHeight="37.0" prefWidth="197.0" unFocusColor="#959494" />
+      <JFXTextField fx:id="txtVerdict" disable="true" layoutX="221.0" layoutY="298.0" prefHeight="37.0" prefWidth="197.0" unFocusColor="#959494" />
+      <JFXTextArea fx:id="txtDescription" disable="true" layoutX="68.0" layoutY="367.0" prefHeight="152.0" prefWidth="523.0" unFocusColor="#959494" />
+   </children>
+</Pane>

@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import com.jfoenix.controls.JFXTabPane?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1000.0" stylesheets="@dark-theme.css" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.AddNewReaderByLibrarianOrManagerController">
+   <children>
+      <StackPane fx:id="MainStack" prefHeight="700.0" prefWidth="1000.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <JFXTabPane prefHeight="700.0" prefWidth="1000.0">
+               <tabs>
+                  <Tab styleClass="tab-main" text="Reader Registration">
+                     <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="700.0" prefWidth="1000.0" stylesheets="@dark-theme.css">
+                           <children>
+                              <Label layoutX="153.0" layoutY="107.0" text="First Name:" textFill="#c9c0c0">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="153.0" layoutY="159.0" text="Last Name:" textFill="#c9c0c0">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="153.0" layoutY="211.0" text="ID Number:" textFill="#c9c0c0">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="153.0" layoutY="367.0" text="Username:" textFill="#c9c0c0">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="153.0" layoutY="419.0" text="Password:" textFill="#c9c0c0">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="153.0" layoutY="263.0" text="Phone Number:" textFill="#c9c0c0">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="153.0" layoutY="315.0" text="E-Mail:" textFill="#c9c0c0">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="393.0" layoutY="14.0" text="Add New Reader" textFill="#c9c0c0">
+                                 <font>
+                                    <Font name="System Bold" size="30.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="153.0" layoutY="471.0" text="Repassword:" textFill="#c9c0c0">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
+                              <JFXTextField fx:id="txtFirstName" labelFloat="true" layoutX="280.0" layoutY="94.0" prefHeight="17.0" prefWidth="240.0" unFocusColor="WHITE" />
+                              <JFXTextField fx:id="txtLastName" labelFloat="true" layoutX="280.0" layoutY="146.0" prefHeight="17.0" prefWidth="240.0" unFocusColor="WHITE" />
+                              <JFXTextField fx:id="txtIDNumber" labelFloat="true" layoutX="280.0" layoutY="198.0" prefHeight="7.0" prefWidth="240.0" promptText="Enter 9 Digit" unFocusColor="WHITE">
+                                 <font>
+                                    <Font size="11.0" />
+                                 </font>
+                              </JFXTextField>
+                              <JFXComboBox fx:id="cmbPhoneNumber" editable="true" layoutX="280.0" layoutY="256.0" prefHeight="31.0" prefWidth="56.0" unFocusColor="WHITE" />
+                              <JFXTextField fx:id="txtPhoneNumber" layoutX="340.0" layoutY="250.0" prefHeight="37.0" prefWidth="181.0" unFocusColor="WHITE" />
+                              <JFXTextField fx:id="lblEmail" labelFloat="true" layoutX="280.0" layoutY="302.0" prefHeight="17.0" prefWidth="240.0" promptText="example@gmail.com" unFocusColor="WHITE" />
+                              <JFXTextField fx:id="lblUsername" labelFloat="true" layoutX="280.0" layoutY="354.0" prefHeight="17.0" prefWidth="240.0" unFocusColor="WHITE" />
+                              <JFXButton fx:id="btnCheckAvailability" layoutX="534.0" layoutY="345.0" onAction="#btnCheckAvailability" text="Check Availability" />
+                              <JFXPasswordField fx:id="lblPassword" labelFloat="true" layoutX="280.0" layoutY="406.0" prefWidth="240.0" promptText="Enter at least 8 digits" unFocusColor="WHITE" />
+                              <JFXPasswordField fx:id="lblRePassword" labelFloat="true" layoutX="280.0" layoutY="458.0" prefWidth="240.0" promptText="Re-Enter Password" unFocusColor="WHITE" />
+                              <JFXButton fx:id="btnSaveReader" layoutX="281.0" layoutY="517.0" onAction="#btnSaveReader" text="Save Reader" />
+                              <ImageView fitHeight="193.0" fitWidth="244.0" layoutX="649.0" layoutY="107.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../files/community-student-icon.png" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </AnchorPane>
+                     </content>
+                  </Tab>
+               </tabs>
+            </JFXTabPane>
+         </children>
+      </StackPane>
+   </children>
+</AnchorPane>
