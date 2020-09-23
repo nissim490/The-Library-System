@@ -1,5 +1,5 @@
  # OBL - Ort Braude Library
- <p align="center"><img src="https://github.com/nissim490/The-Library-System/images/icon.ico" height="250" width="300" /></p>
+ <p align="center"><img src="https://github.com/nissim490/The-Library-System/blob/master/images/icon.ico" height="250" width="300" /></p>
 
   
 ## Software description  
