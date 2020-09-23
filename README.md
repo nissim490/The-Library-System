@@ -1,5 +1,5 @@
  # OBL - Ort Braude Library
- 
+ <p align="center"><img src="https://github.com/nissim490/The-Library-System/images/icon.gif" height="250" width="300" /></p>
 
   
 ## Software description  
@@ -9,10 +9,7 @@ The software is server-client side,the system manages a library, by taking full 
 ## Project Components  
 * MySQL DB - MySQL database that stores all users(include reader account),books,etc.  
 * OCSF - Java framework that can be used to develop client-server systems. 
-* JavaMail - Sending mails to users.
-
-## Requirements
-For initialize the DB , you can find out [here](https://github.com/ziper02/Ort-Braude-Library/blob/master/initDB.sql) for run in MySQL before you start the server.  
+  
 
 ## Setup
 The code implement the server and the client, for start the server you need to run OblServer.java file(you must start the server first, before you run the client) and then for start the client , you need to run AStartClient.java. 
